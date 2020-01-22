@@ -1,0 +1,61 @@
+#login-page {
+    .form-login {
+        h4.titre-form {
+            font-weight: 1000;
+            font-family: Roboto, Helvetica, sans-serif;
+            font-size: 1.8rem;
+        }
+    }
+
+    hr {
+        background: #009292;
+        width: 100px;
+        height: 4px;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    p.description {
+        color: #666666;
+        font-size: 15px;
+    }
+
+    form {
+        .input-group {
+            position: relative;
+            .input-group-prepend .input-group-text {
+                background-color: #ffffff;
+                color: #000000;
+                z-index: 5;
+            }
+            input {
+                width: 100%;
+                position: absolute;
+                padding-left: 50px;
+            }
+            input, #basic-addon3 {
+                border-left: 0;
+            }
+            input[type="password"], #basic-addon1, #basic-addon2 {
+                border-right: 0;
+            }
+            #tooglePassword {
+                position: absolute;
+                right: 0;
+                cursor: pointer;
+            }
+        }
+
+        button[type="submit"] {
+            padding: 0.5rem 5.5rem;
+            line-height: 1;
+            font-size: 1rem;
+            font-weight: 900;
+        }
+
+        @media all and (max-width:480px) {
+            .btn-block-xs-only { width: 100%; display:block; }
+         }
+    }
+}

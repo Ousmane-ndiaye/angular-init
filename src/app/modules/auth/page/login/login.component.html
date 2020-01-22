@@ -1,28 +1,60 @@
-<div [hidden]="!error" class="alert alert-danger">
-  {{ error }}
-</div>
+<div id="login-page" class="row">
+  <div class="col-md-6">
+    <img src="assets/images/user-self.png" alt="" class="imge-responsive">
+  </div>
+  <div class="col-md-6">
+    <fieldset class="form-login text-center" [disabled]="isLoading">
+      <h4 class="titre-form">
+        Indentification
+      </h4>
+      <hr>
+      <p class="description">
+        Les informations de connexion sont<br>les mêmes que celles de windows
+      </p>
+      <form (ngSubmit)="login()" [formGroup]="loginForm" class="mt-4">
+          <div [hidden]="!error" class="alert alert-danger">
+            {{ error }}
+          </div>
+          <div class="form-group">
+            <label class="d-block">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><fa-icon [icon]="'user'"></fa-icon></span>
+                </div>
+                <input type="text" class="form-control" [placeholder]="'Matricule'" formControlName="username">
+              </div>
+              <p class="text-left">
+                <app-control-messages [control]="f['username']"></app-control-messages>
+              </p>
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="d-block">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon2"><fa-icon [icon]="'lock'"></fa-icon></span>
+                </div>
+                <input [type]="!pwdToogled ? 'password' : 'text'" class="form-control" [placeholder]="'Mot de passe windows'"
+                  formControlName="password">
+                <div class="input-group-prepend" id="tooglePassword" (click)="pwdToogled=!pwdToogled">
+                  <span class="input-group-text" id="basic-addon3"><fa-icon [icon]="!pwdToogled ? 'eye' : 'eye-slash'"></fa-icon></span>
+                </div>
+              </div>
+              <p class="text-left">
+                <app-control-messages [control]="f['password']"></app-control-messages>
+              </p>
+            </label>
+          </div>
 
-<fieldset [disabled]="isLoading">
-  <form (ngSubmit)="login()" [formGroup]="loginForm">
-      <div class="form-group">
-        <label class="d-block">
-          <input type="text" class="form-control" [placeholder]="'Username'" formControlName="username">
-          <app-control-messages [control]="f['username']"></app-control-messages>
-        </label>
-      </div>
-      <div class="form-group">
-        <label class="d-block">
-          <input type="password" class="form-control" [placeholder]="'Password'" formControlName="password">
-          <app-control-messages [control]="f['password']"></app-control-messages>
-        </label>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block btn-raised" type="submit" [disabled]="loginForm.invalid">
-          <span [hidden]="isLoading">Submit</span>
-          <span [hidden]="!isLoading">
-            <fa-icon icon="asterisk" size="3x" [spin]="true"></fa-icon>
-          </span>
-        </button>
-      </div>
-  </form>
-</fieldset>
+          <div class="mt-5 form-group text-right">
+            <button type="submit" class="btn btn-primary btn-lg btn-raised btn-block-xs-only" type="submit" [disabled]="loginForm.invalid">
+              <span [hidden]="isLoading">Valider</span>
+              <span [hidden]="!isLoading">
+                <fa-icon icon="asterisk" size="3x" [spin]="true"></fa-icon>
+              </span>
+            </button>
+          </div>
+      </form>
+    </fieldset>
+  </div>
+</div>

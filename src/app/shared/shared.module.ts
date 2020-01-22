@@ -12,6 +12,7 @@ import {
   faCodeBranch,
   faAsterisk,
   faBars,
+  faUser,
   faUserCircle,
   faPowerOff,
   faCog,
@@ -33,7 +34,10 @@ import {
   faLightbulb,
   faWindowMaximize,
   faStream,
-  faBook
+  faBook,
+  faLock,
+  faEye,
+  faEyeSlash
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -64,6 +68,7 @@ export class SharedModule {
     library.addIcons(faCodeBranch);
     library.addIcons(faAsterisk);
     library.addIcons(faBars);
+    library.addIcons(faUser);
     library.addIcons(faUserCircle);
     library.addIcons(faPowerOff);
     library.addIcons(faCog);
@@ -86,5 +91,8 @@ export class SharedModule {
     library.addIcons(faWindowMaximize);
     library.addIcons(faStream);
     library.addIcons(faBook);
+    library.addIcons(faLock);
+    library.addIcons(faEye);
+    library.addIcons(faEyeSlash);
   }
 }
