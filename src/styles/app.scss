@@ -5,6 +5,11 @@
 @import "rtl";
 @import "responsive";
 
+
+body {
+    font-family: Roboto, Helvetica, sans-serif
+}
+
 @media print {
     .breadcrumb {
         display: none !important;

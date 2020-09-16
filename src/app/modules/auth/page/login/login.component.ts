@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   error: string;
   isLoading: boolean;
   loginForm: FormGroup;
+  pwdToogled = false;
 
   constructor(
     private formBuilder: FormBuilder,
